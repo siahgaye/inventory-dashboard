@@ -22,7 +22,7 @@
         var canvas = document.getElementById('pdf-canvas');
         var context = canvas.getContext('2d');
         var viewport = page.getViewport({ scale: 1 });
-        var renderScale = 3;
+        var renderScale = 4;
         var fitScale = Math.min(window.innerWidth / viewport.width, window.innerHeight / viewport.height);
         viewport = page.getViewport({ scale: fitScale * renderScale });
         canvas.width = viewport.width;
