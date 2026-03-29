@@ -5,8 +5,8 @@
 <title>Dashboard</title>
 <style>
   * { margin: 0; padding: 0; }
-  html, body { width: 100%; height: 100%; overflow: hidden; background: #000; }
-  canvas { display: block; margin: 0 auto; }
+  html, body { width: 100%; height: 100%; overflow: hidden; background: #000; display: flex; align-items: center; justify-content: center; }
+  canvas { display: block; max-width: 100%; max-height: 100%; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 </head>
@@ -22,10 +22,13 @@
         var canvas = document.getElementById('pdf-canvas');
         var context = canvas.getContext('2d');
         var viewport = page.getViewport({ scale: 1 });
-        var scale = Math.min(window.innerWidth / viewport.width, window.innerHeight / viewport.height);
-        viewport = page.getViewport({ scale: scale });
+        var renderScale = 3;
+        var fitScale = Math.min(window.innerWidth / viewport.width, window.innerHeight / viewport.height);
+        viewport = page.getViewport({ scale: fitScale * renderScale });
         canvas.width = viewport.width;
         canvas.height = viewport.height;
+        canvas.style.width = (viewport.width / renderScale) + 'px';
+        canvas.style.height = (viewport.height / renderScale) + 'px';
         page.render({ canvasContext: context, viewport: viewport });
       });
     });
@@ -36,10 +39,3 @@
 </script>
 </body>
 </html>
-```
-
-Then click **Commit changes**.
-
-Now on the TV, navigate to:
-```
-https://siahgaye.github.io/inventory-dashboard/
