@@ -2,20 +2,227 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Safety Dashboard</title>
+<title>Safety Dashboard - AM-HUB WEST</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: Arial, sans-serif; background: #0F172A; min-height: 100vh; display: flex; align-items: center; justify-content: center; color: #fff; text-align: center; }
-  h1 { font-size: 36px; margin-bottom: 16px; }
-  p { font-size: 18px; color: #94A3B8; margin-bottom: 32px; }
-  a { color: #60A5FA; font-size: 16px; }
+  body { font-family: Arial, sans-serif; background: #F0FDF4; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+  .sf { width: 100%; max-width: 1100px; margin: 20px; overflow: hidden; }
+  .sf-top { background: #0F172A; padding: 20px 36px; display: flex; justify-content: space-between; align-items: center; border-radius: 14px 14px 0 0; }
+  .sf-brand { display: flex; align-items: center; gap: 16px; }
+  .sf-logo { background: #16A34A; color: #fff; width: 48px; height: 48px; border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+  .sf-brand-name { font-size: 22px; font-weight: 700; color: #fff; letter-spacing: 0.5px; }
+  .sf-brand-sub { font-size: 12px; color: #94A3B8; margin-top: 2px; }
+  .sf-mt { text-align: right; }
+  .sf-mt-name { font-size: 20px; font-weight: 700; color: #fff; letter-spacing: 0.5px; }
+  .sf-mt-tag { font-size: 11px; color: #64748B; margin-top: 3px; letter-spacing: 1.5px; }
+  .sf-stripe { height: 5px; background: linear-gradient(90deg, #16A34A 0%, #22C55E 50%, #4ADE80 100%); }
+  .sf-body { background: #fff; padding: 36px 40px; border-radius: 0 0 14px 14px; border: 1px solid #E5E7EB; border-top: none; }
+  .sf-counter { text-align: center; margin-bottom: 28px; }
+  .sf-shield { display: inline-flex; align-items: center; justify-content: center; width: 64px; height: 64px; border-radius: 50%; background: #DCFCE7; border: 3px solid #16A34A; margin-bottom: 14px; }
+  .sf-num { font-size: 130px; font-weight: 700; color: #16A34A; line-height: 1; }
+  .sf-label { font-size: 22px; font-weight: 700; color: #15803D; letter-spacing: 4px; margin-top: 8px; }
+  .sf-since { font-size: 14px; color: #9CA3AF; margin-top: 12px; }
+  .sf-stats { display: flex; justify-content: center; gap: 20px; margin: 24px 0 32px; }
+  .sf-stat { background: #F9FAFB; border-radius: 12px; padding: 18px 32px; text-align: center; border: 1px solid #E5E7EB; flex: 1; max-width: 200px; }
+  .sf-stat-num { font-size: 32px; font-weight: 700; color: #0F172A; }
+  .sf-stat-lbl { font-size: 12px; color: #9CA3AF; margin-top: 3px; font-weight: 600; letter-spacing: 0.5px; }
+  .sf-topic { background: #F9FAFB; border-radius: 14px; padding: 28px 32px; border: 1px solid #E5E7EB; position: relative; overflow: hidden; }
+  .sf-topic-accent { position: absolute; left: 0; top: 0; bottom: 0; width: 6px; background: #16A34A; }
+  .sf-topic-inner { margin-left: 16px; }
+  .sf-wk { font-size: 13px; color: #16A34A; font-weight: 700; letter-spacing: 1.5px; margin-bottom: 8px; }
+  .sf-tp-title { font-size: 26px; font-weight: 700; color: #111827; margin-bottom: 12px; }
+  .sf-tp-desc { font-size: 16px; color: #6B7280; line-height: 1.7; }
+  .sf-talk { display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
+  .sf-pill { background: #DCFCE7; border-radius: 20px; padding: 8px 18px; font-size: 13px; color: #15803D; font-weight: 600; }
+  .sf-foot { display: flex; justify-content: space-between; align-items: center; margin-top: 24px; padding: 0 4px; }
+  .sf-foot-left { font-size: 12px; color: #D1D5DB; }
+  .sf-foot-right { font-size: 13px; color: #16A34A; font-weight: 600; }
+  .sf-back { position: absolute; top: 20px; left: 20px; font-size: 14px; color: #94A3B8; text-decoration: none; }
+  .sf-back:hover { color: #16A34A; }
 </style>
 </head>
 <body>
-<div>
-  <h1>Safety Dashboard</h1>
-  <p>Coming soon</p>
-  <a href="index.html">&larr; Back to SQDC</a>
+<a href="index.html" class="sf-back">&larr; Back to SQDC</a>
+<div class="sf">
+  <div class="sf-top">
+    <div class="sf-brand">
+      <div class="sf-logo">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v10l9 5 9-5V7l-9-5z" stroke="#fff" stroke-width="2" fill="none"/><path d="M9 12l2 2 4-4" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <div class="sf-brand-name">AM-HUB WEST</div>
+        <div class="sf-brand-sub">Warehouse 370 &bull; Safety Dashboard</div>
+      </div>
+    </div>
+    <div class="sf-mt">
+      <div class="sf-mt-name">METTLER TOLEDO</div>
+      <div class="sf-mt-tag">YOUR PARTNER IN PRECISION</div>
+    </div>
+  </div>
+  <div class="sf-stripe"></div>
+  <div class="sf-body">
+    <div class="sf-counter">
+      <div class="sf-shield">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v6c0 5.25 3.75 10.13 9 11.25C17.25 23.13 21 18.25 21 13V7l-9-5z" fill="#16A34A"/><path d="M9 12l2 2 4-4" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="sf-num" id="dayCount">--</div>
+      <div class="sf-label">DAYS WITHOUT INJURY</div>
+      <div class="sf-since" id="sinceDate">Last incident: --</div>
+    </div>
+    <div class="sf-stats">
+      <div class="sf-stat">
+        <div class="sf-stat-num" id="currentStreak">--</div>
+        <div class="sf-stat-lbl">CURRENT STREAK</div>
+      </div>
+      <div class="sf-stat">
+        <div class="sf-stat-num" id="bestStreak">--</div>
+        <div class="sf-stat-lbl">BEST STREAK</div>
+      </div>
+      <div class="sf-stat">
+        <div class="sf-stat-num">365</div>
+        <div class="sf-stat-lbl">2026 GOAL</div>
+      </div>
+    </div>
+    <div class="sf-topic">
+      <div class="sf-topic-accent"></div>
+      <div class="sf-topic-inner">
+        <div class="sf-wk" id="weekLabel">WEEK -- — SAFETY TOPIC</div>
+        <div class="sf-tp-title" id="topicTitle">--</div>
+        <div class="sf-tp-desc" id="topicDesc">--</div>
+        <div class="sf-talk" id="topicPills"></div>
+      </div>
+    </div>
+    <div class="sf-foot">
+      <div class="sf-foot-left" id="todayDate">--</div>
+      <div class="sf-foot-right">Safety is everyone's responsibility</div>
+    </div>
+  </div>
 </div>
+
+<script>
+// =====================================================================
+// CONFIGURATION — Edit these values to update the dashboard
+// =====================================================================
+var LAST_INJURY_DATE = "2025-12-29";   // Format: YYYY-MM-DD — change this when an incident occurs
+var BEST_STREAK_DAYS = 100;             // Update this if current streak beats the old record
+
+// =====================================================================
+// 52 WEEKLY SAFETY TOPICS — Warehouse-specific, organized by season
+// =====================================================================
+var topics = [
+  // WEEK 1-13: WINTER / Q1
+  { title: "New year safety reset", desc: "Start the year with a clean slate. Review all emergency exits, ensure fire extinguishers are inspected, and confirm everyone knows evacuation routes. A fresh start means fresh awareness.", pills: ["Check exits", "Inspect extinguishers", "Review routes", "Fresh start"] },
+  { title: "Cold weather slip prevention", desc: "Winter brings wet floors from rain and snow tracked inside. Wipe your boots before entering, report wet spots immediately, and use caution on loading docks. One slip can mean months of recovery.", pills: ["Wipe boots", "Report wet spots", "Dock caution", "Walk don't run"] },
+  { title: "Forklift pre-shift inspections", desc: "Never skip your pre-shift forklift inspection. Check brakes, steering, tires, lights, horn, and hydraulic fluid levels. A two-minute check can prevent a serious accident.", pills: ["Check brakes", "Test horn", "Inspect tires", "Check fluids"] },
+  { title: "Proper lifting techniques", desc: "Always lift with your legs, not your back. Keep the load close to your body, bend at the knees, and avoid twisting while carrying. Ask for help with heavy or awkward items.", pills: ["Bend at knees", "Keep load close", "No twisting", "Ask for help"] },
+  { title: "PPE compliance check", desc: "Safety shoes, high-visibility vests, gloves, and eye protection are required for a reason. Inspect your PPE before each shift — worn or damaged gear does not protect you.", pills: ["Safety shoes", "Hi-vis vest", "Gloves", "Eye protection"] },
+  { title: "Pedestrian and forklift zones", desc: "Forklifts and people do not mix. Stay in marked pedestrian walkways, make eye contact with forklift operators before crossing, and never walk behind a reversing forklift.", pills: ["Use walkways", "Eye contact", "Never behind", "Stay alert"] },
+  { title: "Lockout/tagout procedures", desc: "Before servicing any equipment, follow lockout/tagout procedures to prevent unexpected startup. Verify the energy source is isolated and test before beginning work.", pills: ["Isolate energy", "Apply lock", "Verify zero", "Tag the source"] },
+  { title: "Emergency action plan review", desc: "Do you know where to go in an emergency? Review rally points, fire alarm locations, first aid kit positions, and who your floor warden is. Seconds matter in an emergency.", pills: ["Rally points", "Alarm locations", "First aid kits", "Floor wardens"] },
+  { title: "Rack safety and load limits", desc: "Never exceed posted rack load limits. Report any damaged uprights, bent beams, or missing safety clips immediately. A rack collapse can be catastrophic.", pills: ["Check load limits", "Report damage", "Safety clips", "No climbing"] },
+  { title: "Housekeeping and 5S", desc: "A clean warehouse is a safe warehouse. Keep aisles clear, return tools to their proper place, dispose of packaging immediately, and never block fire exits or safety equipment.", pills: ["Clear aisles", "Return tools", "No blocking exits", "Clean as you go"] },
+  { title: "Battery charging safety", desc: "Forklift battery charging areas have specific hazards — hydrogen gas, acid spills, and electrical risk. Wear face shields and rubber gloves, ensure ventilation, and never smoke near charging stations.", pills: ["Wear face shield", "Rubber gloves", "Ventilate area", "No smoking"] },
+  { title: "Reporting near misses", desc: "A near miss today is tomorrow's accident. Report every close call — no matter how small. Near-miss reports help us fix hazards before someone gets hurt.", pills: ["Report all", "No blame", "Fix hazards", "Prevent injuries"] },
+  { title: "Ladder and elevated work safety", desc: "Always maintain three points of contact on ladders. Inspect before use, set on level ground, and never stand on the top two rungs. Use fall protection above 4 feet.", pills: ["Three-point contact", "Inspect first", "Level ground", "Fall protection"] },
+
+  // WEEK 14-26: SPRING / Q2
+  { title: "Spring cleaning safety audit", desc: "Spring is the perfect time for a deep safety audit. Walk every aisle, check every rack, test every alarm. Fresh eyes catch hazards that routine overlooks.", pills: ["Walk every aisle", "Check racks", "Test alarms", "Document findings"] },
+  { title: "Dock safety and trailer restraints", desc: "Always chock wheels and engage trailer restraints before loading or unloading. Verify the dock plate is secure and the trailer is properly aligned. Never enter an unsecured trailer.", pills: ["Chock wheels", "Engage restraints", "Check dock plate", "Verify alignment"] },
+  { title: "Hand and finger injury prevention", desc: "Hands are involved in most warehouse injuries. Wear cut-resistant gloves when handling sharp materials, keep hands away from pinch points, and never reach into moving equipment.", pills: ["Cut-resistant gloves", "Watch pinch points", "No reaching in", "Use tools"] },
+  { title: "Fire prevention and extinguisher use", desc: "Know the PASS technique: Pull the pin, Aim at the base, Squeeze the handle, Sweep side to side. Keep flammable materials in designated storage and never block extinguisher access.", pills: ["Pull", "Aim at base", "Squeeze", "Sweep"] },
+  { title: "Pallet jack safety", desc: "Keep pallet jacks maintained and inspect before use. Never ride a manual pallet jack, watch your feet during operation, and lower loads fully before turning or traveling.", pills: ["Inspect first", "No riding", "Watch feet", "Lower before turning"] },
+  { title: "Hazardous material handling", desc: "Know where Safety Data Sheets are located and read them before handling chemicals. Wear required PPE, know spill cleanup procedures, and never mix chemicals.", pills: ["Read SDS", "Proper PPE", "Spill procedures", "Never mix"] },
+  { title: "Ergonomics at the workstation", desc: "Repetitive motion injuries develop over time. Adjust your workstation height, alternate tasks when possible, stretch regularly, and use anti-fatigue mats at standing stations.", pills: ["Adjust height", "Alternate tasks", "Stretch often", "Anti-fatigue mats"] },
+  { title: "Conveyor belt safety", desc: "Never reach into, lean on, or sit on conveyor belts — moving or stationary. Use emergency stops if something goes wrong and keep long hair and loose clothing secured.", pills: ["Never reach in", "Don't lean on", "Use e-stops", "Secure clothing"] },
+  { title: "Electrical safety awareness", desc: "Report frayed cords, damaged outlets, and overloaded circuits immediately. Never use equipment with damaged wiring. Water and electricity are a deadly combination.", pills: ["Report damage", "No damaged cords", "No overloading", "Keep dry"] },
+  { title: "Safe stacking and storage", desc: "Stack heavy items on lower shelves, keep heavier boxes on the bottom of stacks, and never stack beyond sight line. Unstable stacks fall — and they fall on people.", pills: ["Heavy items low", "Stable stacking", "Within sight line", "Secure loads"] },
+  { title: "Communication and hand signals", desc: "Clear communication prevents accidents. Use standard hand signals with forklift operators, speak up if something looks unsafe, and never use headphones that block warning sounds.", pills: ["Hand signals", "Speak up", "No headphones", "Clear calls"] },
+  { title: "First aid basics refresher", desc: "Would you know what to do if a coworker was injured? Review basic first aid — where kits are located, how to apply pressure to a wound, and when to call 911 versus on-site medical.", pills: ["Kit locations", "Apply pressure", "When to call 911", "Stay calm"] },
+  { title: "Mental health and fatigue awareness", desc: "Tired workers make mistakes. Get adequate sleep, take your breaks, stay hydrated, and speak up if you are struggling. Mental health is part of workplace safety.", pills: ["Get rest", "Take breaks", "Stay hydrated", "Speak up"] },
+
+  // WEEK 27-39: SUMMER / Q3
+  { title: "Heat illness prevention", desc: "Summer heat in a warehouse can be dangerous. Drink water every 15-20 minutes, take cooling breaks, watch for signs of heat exhaustion — dizziness, nausea, and heavy sweating.", pills: ["Drink water often", "Cooling breaks", "Know the signs", "Buddy system"] },
+  { title: "Hydration and break schedules", desc: "Don't wait until you are thirsty to drink water — by then you are already dehydrated. Keep a water bottle with you, avoid excessive caffeine, and use scheduled breaks to cool down.", pills: ["Water bottle ready", "Don't wait", "Limit caffeine", "Use break times"] },
+  { title: "Sun protection for dock workers", desc: "Workers on docks and in yards face UV exposure. Apply sunscreen to exposed skin, wear hats and lightweight long sleeves, and seek shade during peak sun hours when possible.", pills: ["Apply sunscreen", "Wear a hat", "Lightweight layers", "Seek shade"] },
+  { title: "Powered industrial truck refresher", desc: "PIT certification is not just a one-time thing. Review speed limits, right-of-way rules, load capacity, and turning techniques. Complacency with forklifts leads to serious incidents.", pills: ["Speed limits", "Right-of-way", "Load capacity", "Proper turning"] },
+  { title: "Spill prevention and cleanup", desc: "Spills create slip hazards and can be toxic. Clean up spills immediately, use proper absorbent materials, wear required PPE, and place wet floor signs while cleaning.", pills: ["Clean immediately", "Use absorbents", "Wear PPE", "Post signs"] },
+  { title: "Tool safety and inspection", desc: "Inspect hand and power tools before each use. Replace damaged tools immediately, use the right tool for the job, and always cut away from your body when using blades.", pills: ["Inspect before use", "Replace damaged", "Right tool", "Cut away"] },
+  { title: "Working in confined spaces", desc: "Never enter a confined space without proper authorization, atmosphere testing, and a spotter. Know the permit requirements and ensure rescue equipment is staged before entry.", pills: ["Get authorization", "Test atmosphere", "Use a spotter", "Rescue ready"] },
+  { title: "Preventing struck-by injuries", desc: "Struck-by incidents are a leading cause of warehouse injuries. Stay out from under suspended loads, wear hard hats in designated areas, and secure materials before moving them.", pills: ["No under loads", "Hard hats", "Secure materials", "Stay aware"] },
+  { title: "Personal vehicle safety in the lot", desc: "The warehouse parking lot has its own hazards. Drive slowly, watch for pedestrians, back into spots when possible, and never use your phone while driving in the lot.", pills: ["Drive slowly", "Watch for people", "Back in", "Phone down"] },
+  { title: "Respiratory protection", desc: "Dust, fumes, and airborne particles can cause long-term health problems. Wear required respirators in designated areas, ensure proper fit, and replace filters on schedule.", pills: ["Wear respirator", "Proper fit", "Replace filters", "Know your area"] },
+  { title: "Insect and pest awareness", desc: "Warehouses attract pests. Watch for wasp nests near dock doors, be cautious of spiders in seldom-used areas, and report any pest sightings to facilities immediately.", pills: ["Watch for nests", "Check dark areas", "Report sightings", "Wear gloves"] },
+  { title: "Mid-year safety goal check-in", desc: "We are halfway through the year. Review our safety goals, celebrate our streak, discuss what is working, and identify areas for improvement. Every safe day is an achievement.", pills: ["Review goals", "Celebrate wins", "What's working", "Improve"] },
+
+  // WEEK 40-52: FALL / Q4
+  { title: "Fall prevention on wet surfaces", desc: "Autumn rain means wet floors near dock doors and entrances. Use floor squeegees, place absorbent mats at entry points, and wear slip-resistant footwear at all times.", pills: ["Floor squeegees", "Entry mats", "Slip-resistant shoes", "Report wet floors"] },
+  { title: "Peak season preparation safety", desc: "Higher volumes mean more activity, more temporary workers, and more risk. Ensure all temps receive safety orientation, maintain clear aisles despite higher inventory, and slow down.", pills: ["Orient temps", "Clear aisles", "Slow down", "Extra caution"] },
+  { title: "Fatigue management during overtime", desc: "Peak season overtime leads to fatigue. Take all scheduled breaks, rotate between tasks, report if you feel too tired to operate equipment safely, and look out for your coworkers.", pills: ["Take breaks", "Rotate tasks", "Report fatigue", "Watch coworkers"] },
+  { title: "Temporary worker safety orientation", desc: "Every temp worker deserves the same safety knowledge as permanent staff. Pair new temps with experienced workers, review emergency procedures, and never assume they know the hazards.", pills: ["Pair with veteran", "Review emergencies", "Never assume", "Ask questions"] },
+  { title: "Falling object prevention", desc: "Improperly stored items on high shelves can fall and injure someone below. Ensure items are pushed back on shelves, use safety netting where needed, and never overload top shelves.", pills: ["Push items back", "Safety netting", "No overloading", "Inspect shelves"] },
+  { title: "Eye protection and awareness", desc: "Flying debris, dust, and chemical splashes can cause permanent eye damage. Wear safety glasses in all designated areas, know where eyewash stations are, and report any eye injury immediately.", pills: ["Safety glasses", "Know eyewash", "Report injuries", "No rubbing"] },
+  { title: "Hearing protection", desc: "Prolonged exposure to warehouse noise can cause permanent hearing loss. Wear ear protection in designated areas, know your noise exposure limits, and report equipment that seems unusually loud.", pills: ["Wear protection", "Know limits", "Report loud equipment", "Protect hearing"] },
+  { title: "Vehicle and trailer inspection", desc: "Before loading any trailer, inspect the floor for holes, check that the landing gear is secure, and verify the dock seal is properly engaged. A failed trailer floor can cause falls and injuries.", pills: ["Check floor", "Landing gear", "Dock seal", "Report damage"] },
+  { title: "Holiday safety awareness", desc: "The holidays bring distractions. Stay focused on the job, don't rush to finish early, follow all procedures even when it is busy, and remember your family needs you home safe.", pills: ["Stay focused", "Don't rush", "Follow procedures", "Get home safe"] },
+  { title: "Cold stress and hypothermia", desc: "Workers in cold storage or near open dock doors face cold stress. Dress in layers, take warming breaks, watch for signs of hypothermia — shivering, confusion, and drowsiness.", pills: ["Dress in layers", "Warming breaks", "Know the signs", "Buddy checks"] },
+  { title: "Year-end safety review", desc: "Reflect on our safety performance this year. Celebrate our injury-free days, recognize team members who went above and beyond for safety, and set goals for next year.", pills: ["Celebrate streak", "Recognize leaders", "Set 2027 goals", "Thank the team"] },
+  { title: "Winter driving and commute safety", desc: "Your safety starts before you even clock in. Allow extra time for winter commutes, clear all ice and snow from your vehicle, and drive for conditions — not the speed limit.", pills: ["Extra time", "Clear your car", "Drive for conditions", "Slow down"] }
+];
+
+// =====================================================================
+// CALCULATE AND RENDER
+// =====================================================================
+function render() {
+  var lastDate = new Date(LAST_INJURY_DATE + "T00:00:00");
+  var today = new Date();
+  today.setHours(0,0,0,0);
+
+  var diffMs = today - lastDate;
+  var days = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+  if (days < 0) days = 0;
+
+  document.getElementById("dayCount").textContent = days;
+  document.getElementById("currentStreak").textContent = days;
+  document.getElementById("bestStreak").textContent = Math.max(days, BEST_STREAK_DAYS);
+
+  var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  document.getElementById("sinceDate").textContent = "Last incident: " + months[lastDate.getMonth()] + " " + lastDate.getDate() + ", " + lastDate.getFullYear();
+
+  var weekDays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+  document.getElementById("todayDate").textContent = weekDays[today.getDay()] + ", " + months[today.getMonth()] + " " + today.getDate() + ", " + today.getFullYear();
+
+  // Get ISO week number
+  var d = new Date(today);
+  d.setHours(0,0,0,0);
+  d.setDate(d.getDate() + 3 - (d.getDay() + 6) % 7);
+  var week1 = new Date(d.getFullYear(), 0, 4);
+  var weekNum = 1 + Math.round(((d - week1) / 86400000 - 3 + (week1.getDay() + 6) % 7) / 7);
+
+  var topicIndex = (weekNum - 1) % 52;
+  var topic = topics[topicIndex];
+
+  document.getElementById("weekLabel").textContent = "WEEK " + weekNum + " \u2014 SAFETY TOPIC";
+  document.getElementById("topicTitle").textContent = topic.title;
+  document.getElementById("topicDesc").textContent = topic.desc;
+
+  var pillsHtml = "";
+  for (var i = 0; i < topic.pills.length; i++) {
+    pillsHtml += '<div class="sf-pill">' + topic.pills[i] + '</div>';
+  }
+  document.getElementById("topicPills").innerHTML = pillsHtml;
+
+  // Turn counter red if streak is 0
+  if (days === 0) {
+    document.getElementById("dayCount").style.color = "#DC2626";
+  }
+}
+
+render();
+// Refresh at midnight
+var now = new Date();
+var msUntilMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 5) - now;
+setTimeout(function() { render(); setInterval(render, 86400000); }, msUntilMidnight);
+</script>
 </body>
 </html>
