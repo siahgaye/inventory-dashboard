@@ -2,19 +2,103 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>AM-HUB WEST Dashboards</title>
+<title>AM-HUB WEST SQDC</title>
 <style>
-  body { font-family: Arial; background: #0F172A; color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; }
-  h1 { margin-bottom: 40px; font-size: 36px; }
-  a { display: block; background: #244BA6; color: #fff; text-decoration: none; padding: 20px 60px; margin: 10px; border-radius: 8px; font-size: 22px; text-align: center; }
-  a:hover { background: #1e3a8a; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; background: #0F172A; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+  .wrap { width: 100%; max-width: 1200px; padding: 28px; }
+  .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px; }
+  .header h1 { font-size: 32px; font-weight: 700; color: #fff; }
+  .header p { font-size: 14px; color: #64748B; margin-top: 2px; }
+  .sqdc-bar { display: flex; gap: 2px; }
+  .sqdc-bar span { padding: 8px 20px; color: #fff; font-weight: 700; font-size: 16px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 32px; }
+  .card { background: #fff; border-radius: 10px; padding: 24px; text-decoration: none; display: block; border-left: 5px solid; transition: transform 0.15s; }
+  .card:hover { transform: scale(1.02); }
+  .card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+  .card-icon { width: 36px; height: 36px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 700; color: #fff; }
+  .card-title { font-size: 20px; font-weight: 700; color: #0F172A; }
+  .card-desc { font-size: 13px; color: #64748B; margin-bottom: 12px; }
+  .live { font-size: 12px; color: #15803D; font-weight: 700; }
+  .soon { font-size: 12px; color: #94A3B8; font-style: italic; }
+  .card-s { border-left-color: #1D4ED8; }
+  .card-q { border-left-color: #15803D; }
+  .card-d { border-left-color: #B45309; }
+  .card-c { border-left-color: #DC2626; }
+  .s-bg { background: #1D4ED8; }
+  .q-bg { background: #15803D; }
+  .d-bg { background: #B45309; }
+  .c-bg { background: #DC2626; }
+  .extras { border-top: 1px solid #1E293B; padding-top: 20px; }
+  .extras-label { font-size: 12px; color: #fff; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+  .extras-row { display: flex; gap: 12px; }
+  .extra-btn { flex: 1; background: #fff; border-radius: 8px; padding: 18px 20px; text-align: center; text-decoration: none; display: block; transition: transform 0.15s; }
+  .extra-btn:hover { transform: scale(1.02); }
+  .extra-title { font-size: 16px; font-weight: 700; color: #0F172A; }
+  .extra-desc { font-size: 12px; color: #64748B; margin-top: 4px; }
 </style>
 </head>
 <body>
-<h1>AM-HUB WEST Dashboards</h1>
-<a href="inventory.html">Inventory Health Dashboard</a>
-<a href="capacity.html">Capacity Dashboard</a>
-<a href="productivity.html">Productivity Dashboard</a>
-<a href="queue.html">RF Queue Dashboard</a>
+<div class="wrap">
+  <div class="header">
+    <div>
+      <h1>AM-HUB WEST</h1>
+      <p>Mettler Toledo &mdash; Warehouse 370</p>
+    </div>
+    <div class="sqdc-bar">
+      <span class="s-bg" style="border-radius:5px 0 0 5px;">S</span>
+      <span class="q-bg">Q</span>
+      <span class="d-bg">D</span>
+      <span class="c-bg" style="border-radius:0 5px 5px 0;">C</span>
+    </div>
+  </div>
+  <div class="grid">
+    <a href="safety.html" class="card card-s">
+      <div class="card-header">
+        <div class="card-icon s-bg">S</div>
+        <div class="card-title">Safety</div>
+      </div>
+      <div class="card-desc">Incident tracking and safety metrics</div>
+      <div class="soon">Coming soon</div>
+    </a>
+    <a href="quality.html" class="card card-q">
+      <div class="card-header">
+        <div class="card-icon q-bg">Q</div>
+        <div class="card-title">Quality</div>
+      </div>
+      <div class="card-desc">Inventory health and accuracy</div>
+      <div class="live">Live</div>
+    </a>
+    <a href="delivery.html" class="card card-d">
+      <div class="card-header">
+        <div class="card-icon d-bg">D</div>
+        <div class="card-title">Delivery</div>
+      </div>
+      <div class="card-desc">RF queue and order fulfillment</div>
+      <div class="live">Live</div>
+    </a>
+    <a href="cost.html" class="card card-c">
+      <div class="card-header">
+        <div class="card-icon c-bg">C</div>
+        <div class="card-title">Cost</div>
+      </div>
+      <div class="card-desc">Productivity and labor efficiency</div>
+      <div class="live">Live</div>
+    </a>
+  </div>
+  <div class="extras">
+    <div class="extras-label">Additional dashboards</div>
+    <div class="extras-row">
+      <a href="today-productivity.html" class="extra-btn">
+        <div class="extra-title">Today's Productivity</div>
+        <div class="extra-desc">Live daily view</div>
+      </a>
+      <a href="capacity.html" class="extra-btn">
+        <div class="extra-title">Capacity</div>
+        <div class="extra-desc">Bin utilization</div>
+      </a>
+    </div>
+  </div>
+</div>
 </body>
 </html>
